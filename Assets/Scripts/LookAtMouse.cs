@@ -7,13 +7,15 @@ public class LookAtMouse : MonoBehaviour
     public int minRotation = 90;
     public int maxRotation = -90;
 
+    public Camera playerCam;
+
     void Update()
     {
         // Rotation
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 5.23f;
 
-        Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 objectPos = playerCam.WorldToScreenPoint(transform.position);
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
 

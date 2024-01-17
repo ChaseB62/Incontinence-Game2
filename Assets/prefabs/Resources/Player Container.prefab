@@ -292,7 +292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &133958550922521452
 RectTransform:
   m_ObjectHideFlags: 0
@@ -455,6 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minRotation: 90
   maxRotation: -90
+  playerCam: {fileID: 133958550763588588}
 --- !u!114 &133958550954577026
 MonoBehaviour:
   m_ObjectHideFlags: 0
