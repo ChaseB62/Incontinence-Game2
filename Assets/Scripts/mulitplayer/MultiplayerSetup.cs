@@ -7,6 +7,7 @@ using Photon.Pun;
 public class MultiplayerSetup : MonoBehaviour
 {
     public PlayerMovement playerMovement;
+    public GunController gunController;
     public GameObject camera;
 
 
@@ -24,6 +25,7 @@ public class MultiplayerSetup : MonoBehaviour
     {
         IsTheGuy = true;
         playerMovement.enabled = true;
+        gunController.enabled = true;
         camera.SetActive(true);
         SetObjectsActive(objectsToEnable, true);
         SetObjectsActive(objectsToDisable, false);
