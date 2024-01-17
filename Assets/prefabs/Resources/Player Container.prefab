@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 133958552250514917}
+  gunController: {fileID: 8439192084113698727}
   camera: {fileID: 133958550763588584}
   nickname: 
   objectsToEnable:
@@ -558,7 +559,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133958551116701605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a6609eac8398645bc7f6a30a0b0b39, type: 3}
   m_Name: 
