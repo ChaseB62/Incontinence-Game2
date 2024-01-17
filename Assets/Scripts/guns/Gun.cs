@@ -11,6 +11,8 @@ public class Gun : MonoBehaviour
 
     private bool canShoot = true;
 
+    private bool canBePickedUp;
+
     private void Update()
     {
         if (Input.GetKey(shootKey) && canShoot)
@@ -47,4 +49,15 @@ public class Gun : MonoBehaviour
         Debug.Log("end cooldown");
         canShoot = true;
     }
+
+    public void Toggle(bool toggleBool){
+        Debug.Log("Eh");
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.simulated = toggleBool;
+
+        Collider2D collider = GetComponent<Collider2D>();
+        collider.enabled = toggleBool;
+    }
+
+
 }

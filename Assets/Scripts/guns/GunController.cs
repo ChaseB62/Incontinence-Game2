@@ -17,6 +17,8 @@ public class GunController : MonoBehaviour
 
     private bool isLocalPlayer;
 
+    private Gun gun;
+
     public PhotonView photonView;
 
     public void Start(){
@@ -65,15 +67,18 @@ public class GunController : MonoBehaviour
                 //My Life IS OVER!
                 if (collider.CompareTag("Grab"))
                 {
+                    
                     Debug.Log("Picking up " + collider.name);
 
                     originalGunOnGround = collider.gameObject;
+
+                    gun = originalGunOnGround.GetComponent<Gun>();
                     
 
                     if(isLocalPlayer){
                         Debug.Log("is player");
                         currentGun = originalGunOnGround;
-                        Gun gun = currentGun.GetComponent<Gun>();
+                        
                         gun.enabled = true;
 
 
@@ -91,21 +96,10 @@ public class GunController : MonoBehaviour
                     // Store the original Rigidbody2D component
                     originalRigidbody = collider.GetComponent<Rigidbody2D>();
 
-                    // Disable the original Rigidbody2D while the gun is in the player's hand
-                    if (originalRigidbody != null)
-                    {
-                        originalRigidbody.simulated = false;
-                    }
-
-                    PolygonCollider2D collider2 = originalGunOnGround.GetComponent<PolygonCollider2D>();
-                    if(collider2 == null){
-                        Debug.Log("Kill Myself!");
-                    } else {
-                        Debug.Log("Good Job");   
-                    }
-                    collider2.enabled = false;
+                    Collider2D collider2 = originalGunOnGround.GetComponent<Collider2D>();
 
                     
+                    photonView.RPC("ToggleRigidbodyAndCollider", RpcTarget.AllBuffered, false);
 
                     // Update the originalGunOnGround reference and lastPickedGunType
                     originalGunOnGround = currentGun;
@@ -126,12 +120,13 @@ public class GunController : MonoBehaviour
             
             Debug.Log("Dropping " + currentGun.name);
 
-            originalGunOnGround.GetComponent<Collider2D>().enabled = true;
             currentGun.transform.parent = null;
             currentGun.transform.localScale = new Vector3(1f, 1f, 1f);
+
+            gun = currentGun.GetComponent<Gun>();
             
             if(isLocalPlayer){
-                Gun gun = currentGun.GetComponent<Gun>();
+                
                 gun.enabled = false;
             }
 
@@ -145,9 +140,15 @@ public class GunController : MonoBehaviour
             Rigidbody2D gunRigidbody = currentGun.GetComponent<Rigidbody2D>();
             if (gunRigidbody != null)
             {
-                gunRigidbody.simulated = true;
+                Collider2D tempCollider = originalGunOnGround.GetComponent<Collider2D>();
+
+                photonView.RPC("ToggleRigidbodyAndCollider", RpcTarget.AllBuffered, true);
+
                 gunRigidbody.AddForce(currentGun.transform.forward * chuckSpeed, ForceMode2D.Impulse);
             }
+
+            
+            
 
             
 
@@ -163,6 +164,11 @@ public class GunController : MonoBehaviour
         } else {
             Debug.Log("FUCKING KILL yourself");
         }
+    }
+
+    [PunRPC]
+    public void ToggleRigidbodyAndCollider(bool toggleBool){
+        gun.Toggle(toggleBool);
     }
 }
 //homer
