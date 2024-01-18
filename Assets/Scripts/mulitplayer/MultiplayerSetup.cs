@@ -8,6 +8,7 @@ public class MultiplayerSetup : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public GunController gunController;
+    public LookAtMouse lookAtMouse;
     public GameObject camera;
 
 
