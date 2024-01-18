@@ -82,13 +82,13 @@ public class GunController : MonoBehaviour
                         gun.enabled = true;
 
 
-                        originalGunOnGround.transform.parent = playerHand;
+                        
 
                         
                     } else {
                         Debug.Log("is NOT player");
                     }
-
+                    originalGunOnGround.transform.parent = playerHand;
                     originalGunOnGround.transform.localPosition = Vector3.zero;
                     originalGunOnGround.transform.localEulerAngles = new Vector3(0,0,0);
                     currentGun.transform.localScale = new Vector3(1f, 1f, 1f);
