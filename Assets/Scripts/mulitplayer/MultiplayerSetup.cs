@@ -27,6 +27,7 @@ public class MultiplayerSetup : MonoBehaviour
         IsTheGuy = true;
         playerMovement.enabled = true;
         gunController.enabled = true;
+        lookAtMouse.enabled = true;
         camera.SetActive(true);
         SetObjectsActive(objectsToEnable, true);
         SetObjectsActive(objectsToDisable, false);
