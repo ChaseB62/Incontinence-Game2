@@ -84,14 +84,14 @@ public class GunController : MonoBehaviour
 
                         originalGunOnGround.transform.parent = playerHand;
 
-                        originalGunOnGround.transform.localPosition = Vector3.zero;
-                        originalGunOnGround.transform.localEulerAngles = new Vector3(0,0,0);
-                        currentGun.transform.localScale = new Vector3(1f, 1f, 1f);
+                        
                     } else {
                         Debug.Log("is NOT player");
                     }
 
-                   
+                    originalGunOnGround.transform.localPosition = Vector3.zero;
+                    originalGunOnGround.transform.localEulerAngles = new Vector3(0,0,0);
+                    currentGun.transform.localScale = new Vector3(1f, 1f, 1f);
 
                     // Store the original Rigidbody2D component
                     originalRigidbody = collider.GetComponent<Rigidbody2D>();
@@ -145,6 +145,8 @@ public class GunController : MonoBehaviour
                 photonView.RPC("ToggleRigidbodyAndCollider", RpcTarget.AllBuffered, true);
 
                 gunRigidbody.AddForce(currentGun.transform.forward * chuckSpeed, ForceMode2D.Impulse);
+
+                Debug.Log("Toggle");
             }
 
             
@@ -168,6 +170,7 @@ public class GunController : MonoBehaviour
 
     [PunRPC]
     public void ToggleRigidbodyAndCollider(bool toggleBool){
+        Debug.Log("toggling");
         gun.Toggle(toggleBool);
     }
 }
