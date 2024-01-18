@@ -31,6 +31,12 @@ public class MultiplayerSetup : MonoBehaviour
         SetObjectsActive(objectsToDisable, false);
     }
 
+    public void Update(){
+        if(!IsTheGuy){
+            playerMovement.enabled = false;
+        }
+    }
+
     void SetObjectsActive(GameObject[] objects, bool isActive)
     {
         foreach (GameObject obj in objects)
