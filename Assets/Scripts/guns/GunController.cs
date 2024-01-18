@@ -75,7 +75,7 @@ public class GunController : MonoBehaviour
                     gun = originalGunOnGround.GetComponent<Gun>();
                     
 
-                    if(isLocalPlayer){
+                    if(multiplayerSetup.IsTheGuy){
                         Debug.Log("is player");
                         currentGun = originalGunOnGround;
                         
@@ -125,7 +125,7 @@ public class GunController : MonoBehaviour
 
             gun = currentGun.GetComponent<Gun>();
             
-            if(isLocalPlayer){
+            if(multiplayerSetup.IsTheGuy){
                 
                 gun.enabled = false;
             }
