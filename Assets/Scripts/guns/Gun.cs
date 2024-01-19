@@ -9,9 +9,16 @@ public class Gun : MonoBehaviour
     public Transform bulletSpawn;
     public float shootCooldown;
 
+    private AudioSource audioSource;
+    public AudioClip shootSound;
+
     private bool canShoot = true;
 
     private bool canBePickedUp;
+
+    private void Start() {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -29,6 +36,8 @@ public class Gun : MonoBehaviour
         Debug.Log("shot");
 
         Instantiate(bulletObject, bulletSpawn.position, bulletSpawn.rotation);
+
+        audioSource.PlayOneShot(shootSound);
 
         StartCoroutine(StartCooldown());
     }
