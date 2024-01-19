@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 3073204533859201247}
   - component: {fileID: 2390513765774121388}
   - component: {fileID: 7982398358003638602}
+  - component: {fileID: -8817110046243930658}
   m_Layer: 6
   m_Name: Sniperprefab
   m_TagString: Grab
@@ -747,6 +748,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8817110046243930658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4338061899814918280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e16d45fb1a56249975e319f0644d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4407928514429923698
 GameObject:
   m_ObjectHideFlags: 0

@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 7528940227042471694}
   - component: {fileID: 2851028061619872555}
   - component: {fileID: -614271183988452538}
+  - component: {fileID: 1392638966995739223}
   m_Layer: 6
   m_Name: SMGprefab
   m_TagString: Grab
@@ -218,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootKey: 323
-  bulletObject: {fileID: 5834960985422244494, guid: e5197a99a7ebdcb4283894a610db27bc, type: 3}
+  bulletObject: {fileID: 5834960985422244494, guid: efe63245b4e68334382f2063c5c52c2d, type: 3}
   bulletSpawn: {fileID: 5732398739537783108}
   shootCooldown: 0.05
   shootSound: {fileID: 8300000, guid: 89c718bbbbbc3104882005bca105b57b, type: 3}
@@ -341,6 +342,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1392638966995739223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2412288858561228576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e16d45fb1a56249975e319f0644d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4357901163887412151
 GameObject:
   m_ObjectHideFlags: 0

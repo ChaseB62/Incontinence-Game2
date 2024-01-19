@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: -6237552067187001587}
   - component: {fileID: 1036787916428635249}
   - component: {fileID: 4515227920789185849}
+  - component: {fileID: 1644889410578976710}
   m_Layer: 6
   m_Name: AssultRiflePrefab
   m_TagString: Grab
@@ -590,6 +591,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1644889410578976710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739301715480225847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e16d45fb1a56249975e319f0644d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1925268500595788284
 GameObject:
   m_ObjectHideFlags: 0

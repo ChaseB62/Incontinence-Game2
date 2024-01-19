@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     private bool right = false;
     private bool left = false;
 
+    public PhotonView photonView;
+
     void Start(){
         particleHandler = GetComponent<particleHandler>();
     }
@@ -52,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("jamped");
             particleHandler.Jump();
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            photonView.RPC("JumpSFX", RpcTarget.All);
         }
 
         if(Input.GetKey(rightKey) && isGrounded){
@@ -109,4 +113,6 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(transform.right * airWalkSpeed);
         }
     }
+
+    
 }

@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 3586044744938072076}
   - component: {fileID: 567037207264145635}
   - component: {fileID: -3104524544383132051}
+  - component: {fileID: 5328917657076332974}
   m_Layer: 6
   m_Name: shutGunPrefab
   m_TagString: Grab
@@ -502,6 +503,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5328917657076332974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307955723300476377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e16d45fb1a56249975e319f0644d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3785002868337824164
 GameObject:
   m_ObjectHideFlags: 0
