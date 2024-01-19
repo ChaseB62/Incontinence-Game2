@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077526678756720629, guid: 05ec3833017ef5140bd00c6bcf811117, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4077526678756720629, guid: 05ec3833017ef5140bd00c6bcf811117, type: 3}
       propertyPath: m_LocalPosition.x
@@ -834,7 +834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6054607675809350096, guid: c48724e9a462e144aa39d301cad7dd10, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6054607675809350096, guid: c48724e9a462e144aa39d301cad7dd10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1082,7 +1082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4750564871207817861, guid: 97d3fd00ba5260e4aae3a61b0dd43f09, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4750564871207817861, guid: 97d3fd00ba5260e4aae3a61b0dd43f09, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1642,7 +1642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077526678756720629, guid: 05ec3833017ef5140bd00c6bcf811117, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4077526678756720629, guid: 05ec3833017ef5140bd00c6bcf811117, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1703,7 +1703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077526678756720629, guid: 05ec3833017ef5140bd00c6bcf811117, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4077526678756720629, guid: 05ec3833017ef5140bd00c6bcf811117, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1918,7 +1918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942383136511833779, guid: 02993afb6b1f2e64eb442d005f544a31, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7942383136511833779, guid: 02993afb6b1f2e64eb442d005f544a31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2013,6 +2013,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7289309356817729368, guid: 353bf42219d11bb49959fac798c8cb66, type: 3}
+      propertyPath: m_Volume
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 7289309356817729370, guid: 353bf42219d11bb49959fac798c8cb66, type: 3}
       propertyPath: m_Name
       value: SpingusMusic
@@ -2036,7 +2040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046412045969082415, guid: 3e4ebc519c118e04bac2305bd2c8e73c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3046412045969082415, guid: 3e4ebc519c118e04bac2305bd2c8e73c, type: 3}
       propertyPath: m_LocalPosition.x

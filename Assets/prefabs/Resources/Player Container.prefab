@@ -572,7 +572,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pickupRadius: 2
-  chuckSpeed: 1000
+  chuckSpeed: 10000
   isHoldingGun: 0
   photonView: {fileID: 1375388369227838064}
 --- !u!1 &133958551468525888

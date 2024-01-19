@@ -144,7 +144,7 @@ public class GunController : MonoBehaviour
 
                 photonView.RPC("ToggleRigidbodyAndCollider", RpcTarget.AllBuffered, true);
 
-                gunRigidbody.AddForce(currentGun.transform.forward * chuckSpeed, ForceMode2D.Impulse);
+                gunRigidbody.AddForce(playerHand.transform.forward * chuckSpeed);
 
                 Debug.Log("Toggle");
             }
