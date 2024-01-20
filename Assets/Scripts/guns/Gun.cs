@@ -15,6 +15,7 @@ public class Gun : MonoBehaviour
     private bool canShoot = true;
 
     private bool canBePickedUp;
+    public PhotonView photonView;
 
     private void Start() {
         audioSource = GetComponent<AudioSource>();
@@ -24,7 +25,6 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetKey(shootKey) && canShoot)
         {
-            PhotonView photonView = PhotonView.Get(this);
             Debug.Log("got key");
             photonView.RPC("Shoot", RpcTarget.All);
         }

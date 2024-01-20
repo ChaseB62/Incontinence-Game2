@@ -929,6 +929,7 @@ GameObject:
   - component: {fileID: 133958552250514915}
   - component: {fileID: 3327940144204313930}
   - component: {fileID: 8080974824307459019}
+  - component: {fileID: 6798303090289711519}
   m_Layer: 3
   m_Name: Player
   m_TagString: canEffect
@@ -1055,7 +1056,6 @@ MonoBehaviour:
   airWalkSpeed: 35
   rb: {fileID: 133958552250514919}
   photonView: {fileID: 1375388369227838064}
-  jumpSoundEffect: {fileID: 8300000, guid: 695caa3239b3b2248815c5efb3531bad, type: 3}
 --- !u!61 &133958552250514912
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1158,6 +1158,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8e16d45fb1a56249975e319f0644d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6798303090289711519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133958552250514911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818050e2d99df3e4595ff66ecb04a4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &133958552426682065

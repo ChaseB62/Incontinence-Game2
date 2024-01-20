@@ -257,6 +257,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 6225925808315640943}
   shootCooldown: 0.4
   shootSound: {fileID: 8300000, guid: a9fb2bd05d11d7d43b2145f5802f76b0, type: 3}
+  photonView: {fileID: 4131078775423060016}
 --- !u!114 &4131078775423060016
 MonoBehaviour:
   m_ObjectHideFlags: 0

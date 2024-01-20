@@ -9742,7 +9742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 8466808680057109277}
   hitTag: canEffect
-  bulletDamage: 15
+  bulletDamage: 2
 --- !u!1001 &7506206129995487133
 PrefabInstance:
   m_ObjectHideFlags: 0

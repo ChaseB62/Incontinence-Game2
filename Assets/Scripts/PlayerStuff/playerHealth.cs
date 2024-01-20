@@ -17,7 +17,7 @@ public class playerHealth : MonoBehaviour
 
     public Rigidbody2D rb;
     
-    private bool isDead = false;
+    public bool isDead = false;
 
     public float deathFlingForce = 1000f;
     public float deathRotateForce = 100f;
