@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 331220789890186954}
   - component: {fileID: 8460644121771958941}
   m_Layer: 0
-  m_Name: Shotgun
+  m_Name: FINGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 8122652612596395053}
-  - {fileID: 943589566921691000}
+  - {fileID: 637495292424088839}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -42,7 +42,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5834960985422244494}
   serializedVersion: 7
-  lengthInSec: 0.05
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -662,7 +662,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 4.87
+    angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -4891,7 +4891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8466808680057109277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.289}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6706831697929759683}
@@ -5033,8 +5033,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 40
-      minScalar: 35
+      scalar: 50
+      minScalar: 45
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5149,7 +5149,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.075
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5525,7 +5525,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 15.43
+    angle: 3.25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -5840,7 +5840,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 10
+        scalar: 1
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5891,7 +5891,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
       cycleCount: 1
-      repeatInterval: 0.1
+      repeatInterval: 0.01
       probability: 1
   SizeModule:
     enabled: 1
@@ -9682,7 +9682,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15372bb9275585c4ea558720b043743f, type: 2}
+  - {fileID: 2100000, guid: 5ed1780eae53921459650db13ccf1b02, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9713,9 +9713,9 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 0
+  m_RenderAlignment: 4
   m_Pivot: {x: 0, y: 0, z: 0}
-  m_Flip: {x: 0, y: 0, z: 0}
+  m_Flip: {x: 0, y: 1, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
@@ -9742,8 +9742,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 8466808680057109277}
   hitTag: canEffect
-  bulletDamage: 7.5
---- !u!1001 &7920703189575775714
+  bulletDamage: 50
+--- !u!1001 &7506206129995487133
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9800,8 +9800,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d53a5e894ea831d428dff4b172426858, type: 3}
---- !u!4 &943589566921691000 stripped
+--- !u!4 &637495292424088839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6986121115241708186, guid: d53a5e894ea831d428dff4b172426858, type: 3}
-  m_PrefabInstance: {fileID: 7920703189575775714}
+  m_PrefabInstance: {fileID: 7506206129995487133}
   m_PrefabAsset: {fileID: 0}

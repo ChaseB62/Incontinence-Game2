@@ -3,38 +3,37 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public AudioClip introClip;
-    public AudioClip loopingClip;
+    public AudioClip[] audioClips;
 
     private AudioSource audioSource;
-    private bool introClipPlayed = false;
+    private int currentClipIndex = 0;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
 
-        // Set the intro audio clip
+        // Play the intro clip
         audioSource.clip = introClip;
-
-        // Start playing the intro audio
         audioSource.Play();
+        Invoke("StartPlaying", introClip.length); // Invoke StartPlaying after the intro clip finishes
     }
 
-    void Update()
+    void StartPlaying()
     {
-        // Check if the intro clip has finished playing
-        if (!introClipPlayed && !audioSource.isPlaying)
-        {
-            // Intro clip has finished playing
-            introClipPlayed = true;
+        // Start cycling through the audio clips
+        InvokeRepeating("PlayNextClip", 0f, audioClips[currentClipIndex].length);
+    }
 
-            // Switch to the looping audio clip
-            audioSource.clip = loopingClip;
+    void PlayNextClip()
+    {
+        // Stop the current clip
+        audioSource.Stop();
 
-            // Enable looping for the looping audio clip
-            audioSource.loop = true;
+        // Play the next clip in the array
+        audioSource.clip = audioClips[currentClipIndex];
+        audioSource.Play();
 
-            // Start playing the looping audio
-            audioSource.Play();
-        }
+        // Increment the clip index, and loop back to the start if we reach the end of the array
+        currentClipIndex = (currentClipIndex + 1) % audioClips.Length;
     }
 }
