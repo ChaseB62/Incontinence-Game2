@@ -9,6 +9,12 @@ public class LevelSpawner : MonoBehaviour
     private GameObject currentMap;   // Reference to the currently spawned map
     private int currentIndex = 0;   // Index of the currently spawned map
 
+    public float timeToNextMap = 300f;
+
+    public GameObject music;
+
+    public LayerMask gunLayer;
+
     // Collider2D variable to detect interactions
     public Collider2D interactionCollider;
 
@@ -26,11 +32,22 @@ public class LevelSpawner : MonoBehaviour
             interactionCollider.enabled = false;
         }
 
+        // Find all objects on the specified layer
+        Collider2D[] objectsOnLayer = Physics2D.OverlapBoxAll(Vector2.zero, new Vector2(1000, 1000), 0, gunLayer);
+
+        // Destroy each object on the layer
+        foreach (Collider2D obj in objectsOnLayer)
+        {
+            Destroy(obj.gameObject);
+        }
+
         // Spawn the next map prefab
         currentMap = Instantiate(mapPrefabs[currentIndex], Vector3.zero, Quaternion.identity);
 
         // Increment the index for the next map (looping back to the start if necessary)
         currentIndex = (currentIndex + 1) % mapPrefabs.Length;
+    
+        StartCoroutine(Timer());
     }
 
     // OnTriggerEnter2D is called when the Collider2D enters a trigger zone
@@ -40,8 +57,15 @@ public class LevelSpawner : MonoBehaviour
         if (other.CompareTag("canEffect"))
         {
             Debug.Log("Touched");
+            music.SetActive(true);
             // Call the NextMap() function
             NextMap();
         }
+    }
+
+    IEnumerator Timer(){
+        yield return new WaitForSeconds(timeToNextMap);
+        
+        NextMap();
     }
 }
