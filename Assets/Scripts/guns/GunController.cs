@@ -120,7 +120,7 @@ public class GunController : MonoBehaviour
             
             Debug.Log("Dropping " + currentGun.name);
 
-            currentGun.transform.parent = null;
+            originalGunOnGround.transform.parent = null;
             currentGun.transform.localScale = new Vector3(1f, 1f, 1f);
 
             gun = currentGun.GetComponent<Gun>();
@@ -143,6 +143,8 @@ public class GunController : MonoBehaviour
                 Collider2D tempCollider = originalGunOnGround.GetComponent<Collider2D>();
 
                 photonView.RPC("ToggleRigidbodyAndCollider", RpcTarget.AllBuffered, true);
+
+                originalGunOnGround.transform.parent = null;
 
                 gunRigidbody.AddForce(playerHand.transform.forward * chuckSpeed);
 
