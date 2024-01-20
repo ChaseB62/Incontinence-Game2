@@ -24,6 +24,7 @@ public class MultiplayerSetup : MonoBehaviour
 
     public void IsLocalPlayer()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
         IsTheGuy = true;
         playerMovement.enabled = true;
         gunController.enabled = true;

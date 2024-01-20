@@ -9,17 +9,13 @@ public class Gun : MonoBehaviour
     public Transform bulletSpawn;
     public float shootCooldown;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     public AudioClip shootSound;
 
     private bool canShoot = true;
 
     private bool canBePickedUp;
     public PhotonView photonView;
-
-    private void Start() {
-        audioSource = GetComponent<AudioSource>();
-    }
 
     private void Update()
     {
@@ -66,9 +62,12 @@ public class Gun : MonoBehaviour
 
         Collider2D collider = GetComponent<Collider2D>();
         collider.enabled = toggleBool;
+
+        if(toggleBool = false){
+            transform.localPosition = new Vector3(0,0,0);
+        }
     }
 
-    [PunRPC]
     public void ClearParent(){
         Debug.Log("Cleared Parent");
         transform.parent = null;

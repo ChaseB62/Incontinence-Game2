@@ -38,7 +38,8 @@ public class GunController : MonoBehaviour
 
             if (!isHoldingGun)
             {
-                photonView.RPC("PickUpGun", RpcTarget.AllBuffered);
+                //photonView.RPC("PickUpGun", RpcTarget.AllBuffered);
+                PickUpGun();
                 Debug.Log("Picking UP");
             }
             else
@@ -49,7 +50,6 @@ public class GunController : MonoBehaviour
         }
     }
 
-    [PunRPC]
     void PickUpGun()
         {
             if (isHoldingGun)
@@ -65,33 +65,27 @@ public class GunController : MonoBehaviour
                 //aiden wrote the majority of this but since hes stupid and dumb he had to make a new tag for each individual gun so i got rid of that and shunned him.
                 //and then i proceded to fuck the game
                 //My Life IS OVER!
+                //nvm
                 if (collider.CompareTag("Grab"))
                 {
                     
                     Debug.Log("Picking up " + collider.name);
 
                     originalGunOnGround = collider.gameObject;
-
-                    gun = originalGunOnGround.GetComponent<Gun>();
                     
 
                     if(multiplayerSetup.IsTheGuy){
+                        gun = originalGunOnGround.GetComponent<Gun>();
                         Debug.Log("is player");
                         currentGun = originalGunOnGround;
-                        
                         gun.enabled = true;
-
-
-                        
-
-                        
                     } else {
                         Debug.Log("is NOT player");
                     }
                     originalGunOnGround.transform.parent = playerHand;
                     originalGunOnGround.transform.localPosition = Vector3.zero;
                     originalGunOnGround.transform.localEulerAngles = new Vector3(0,0,0);
-                    currentGun.transform.localScale = new Vector3(1f, 1f, 1f);
+                    originalGunOnGround.transform.localScale = new Vector3(1f, 1f, 1f);
 
                     // Store the original Rigidbody2D component
                     originalRigidbody = collider.GetComponent<Rigidbody2D>();
@@ -115,15 +109,15 @@ public class GunController : MonoBehaviour
     [PunRPC]
     void DropGun()
     {
-        if (currentGun != null)
+        if (originalGunOnGround != null)
         {
             
-            Debug.Log("Dropping " + currentGun.name);
+            Debug.Log("Dropping " + originalGunOnGround.name);
 
             originalGunOnGround.transform.parent = null;
-            currentGun.transform.localScale = new Vector3(1f, 1f, 1f);
+            originalGunOnGround.transform.localScale = new Vector3(1f, 1f, 1f);
 
-            gun = currentGun.GetComponent<Gun>();
+            gun = originalGunOnGround.GetComponent<Gun>();
             
             gun.enabled = false;
 
@@ -134,7 +128,7 @@ public class GunController : MonoBehaviour
             }
 
             // Check if the instantiated gun has a Rigidbody2D and re-enable it
-            Rigidbody2D gunRigidbody = currentGun.GetComponent<Rigidbody2D>();
+            Rigidbody2D gunRigidbody = originalGunOnGround.GetComponent<Rigidbody2D>();
             if (gunRigidbody != null)
             {
                 Collider2D tempCollider = originalGunOnGround.GetComponent<Collider2D>();

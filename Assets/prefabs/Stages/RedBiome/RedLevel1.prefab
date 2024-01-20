@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: a8d2841dc3d1ac44fbf71a8e26d26d76, type: 3}
-  m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+  m_Color: {r: 0.8207547, g: 0.53039336, b: 0.53039336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -268,7 +268,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 23954018559b6844ea7c3c017ead8ed2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8207547, g: 0.53039336, b: 0.53039336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -350,7 +350,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: a8d2841dc3d1ac44fbf71a8e26d26d76, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8207547, g: 0.53039336, b: 0.53039336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -432,7 +432,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 23954018559b6844ea7c3c017ead8ed2, type: 3}
-  m_Color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
+  m_Color: {r: 0.8207547, g: 0.53039336, b: 0.53039336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -596,7 +596,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: a8d2841dc3d1ac44fbf71a8e26d26d76, type: 3}
-  m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
+  m_Color: {r: 0.8207547, g: 0.53039336, b: 0.53039336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -884,7 +884,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 23954018559b6844ea7c3c017ead8ed2, type: 3}
-  m_Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+  m_Color: {r: 0.8207547, g: 0.53039336, b: 0.53039336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -966,7 +966,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 23954018559b6844ea7c3c017ead8ed2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8207547, g: 0.53039336, b: 0.53039336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1048,7 +1048,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: a8d2841dc3d1ac44fbf71a8e26d26d76, type: 3}
-  m_Color: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+  m_Color: {r: 0.8207547, g: 0.53039336, b: 0.53039336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1615,7 +1615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 320938138962157238, guid: 96b8b236c61972d4981f0f2ed284541b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.312766
+      value: 5.290966
       objectReference: {fileID: 0}
     - target: {fileID: 320938138962157238, guid: 96b8b236c61972d4981f0f2ed284541b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1697,7 +1697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 320938138962157238, guid: 96b8b236c61972d4981f0f2ed284541b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.288966
+      value: 5.290966
       objectReference: {fileID: 0}
     - target: {fileID: 320938138962157238, guid: 96b8b236c61972d4981f0f2ed284541b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2619,7 +2619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9023198768758257, guid: 4c191d9a96a22014b8b6a87c3530b97f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.2584662
+      value: 5.290966
       objectReference: {fileID: 0}
     - target: {fileID: 9023198768758257, guid: 4c191d9a96a22014b8b6a87c3530b97f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3965,7 +3965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 320938138962157238, guid: 96b8b236c61972d4981f0f2ed284541b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.288966
+      value: 5.290966
       objectReference: {fileID: 0}
     - target: {fileID: 320938138962157238, guid: 96b8b236c61972d4981f0f2ed284541b, type: 3}
       propertyPath: m_LocalPosition.z

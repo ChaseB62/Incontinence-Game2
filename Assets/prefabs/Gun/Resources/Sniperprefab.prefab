@@ -612,7 +612,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 2
   OwnershipTransfer: 2
   observableSearch: 2
   ObservedComponents:
@@ -637,6 +637,7 @@ MonoBehaviour:
   bulletObject: {fileID: 5834960985422244494, guid: 7bff33a6cc82a0c408f91629156af2f6, type: 3}
   bulletSpawn: {fileID: 8898058329239814495}
   shootCooldown: 1
+  audioSource: {fileID: 7982398358003638602}
   shootSound: {fileID: 8300000, guid: 8ceb84346a8e3ab4d8954170eb6f1dfc, type: 3}
   photonView: {fileID: 3073204533859201247}
 --- !u!82 &7982398358003638602

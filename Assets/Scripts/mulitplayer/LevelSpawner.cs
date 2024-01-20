@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class LevelSpawner : MonoBehaviour
 {
@@ -15,10 +16,15 @@ public class LevelSpawner : MonoBehaviour
 
     public LayerMask gunLayer;
 
+    public LayerMask playerLayer;
+
     // Collider2D variable to detect interactions
     public Collider2D interactionCollider;
 
+    public PhotonView photonView;
+
     // Function to spawn the next map
+    [PunRPC]
     public void NextMap()
     {
         // If a map is already spawned, destroy it
@@ -34,11 +40,17 @@ public class LevelSpawner : MonoBehaviour
 
         // Find all objects on the specified layer
         Collider2D[] objectsOnLayer = Physics2D.OverlapBoxAll(Vector2.zero, new Vector2(1000, 1000), 0, gunLayer);
+        Collider2D[] playersOnLayer = Physics2D.OverlapBoxAll(Vector2.zero, new Vector2(1000, 1000), 0, playerLayer);
 
         // Destroy each object on the layer
         foreach (Collider2D obj in objectsOnLayer)
         {
             Destroy(obj.gameObject);
+        }
+
+        foreach (Collider2D obj in playersOnLayer)
+        {
+            obj.transform.position = new Vector3(0, 0, 0);
         }
 
         // Spawn the next map prefab
@@ -59,13 +71,13 @@ public class LevelSpawner : MonoBehaviour
             Debug.Log("Touched");
             music.SetActive(true);
             // Call the NextMap() function
-            NextMap();
+            photonView.RPC("NextMap", RpcTarget.AllBuffered);
         }
     }
 
     IEnumerator Timer(){
         yield return new WaitForSeconds(timeToNextMap);
         
-        NextMap();
+        photonView.RPC("NextMap", RpcTarget.AllBuffered);
     }
 }

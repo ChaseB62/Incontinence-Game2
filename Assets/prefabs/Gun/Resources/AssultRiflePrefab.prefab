@@ -456,6 +456,7 @@ MonoBehaviour:
   bulletObject: {fileID: 5834960985422244494, guid: e5197a99a7ebdcb4283894a610db27bc, type: 3}
   bulletSpawn: {fileID: 6305649655078678440}
   shootCooldown: 0.1
+  audioSource: {fileID: 4515227920789185849}
   shootSound: {fileID: 8300000, guid: 680c2041574544b4e8f9ce6821d92a98, type: 3}
   photonView: {fileID: 1036787916428635249}
 --- !u!114 &1036787916428635249
@@ -473,7 +474,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 2
   OwnershipTransfer: 2
   observableSearch: 2
   ObservedComponents:

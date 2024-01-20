@@ -547,7 +547,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 2
   OwnershipTransfer: 0
   observableSearch: 1
   ObservedComponents:
@@ -1112,8 +1112,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.73, y: 0.75}
+  m_EdgeRadius: 0.12
 --- !u!114 &133958552250514913
 MonoBehaviour:
   m_ObjectHideFlags: 0

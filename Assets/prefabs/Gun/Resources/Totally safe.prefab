@@ -241,6 +241,7 @@ MonoBehaviour:
   bulletObject: {fileID: 5834960985422244494, guid: e5197a99a7ebdcb4283894a610db27bc, type: 3}
   bulletSpawn: {fileID: 6225925808315640943}
   shootCooldown: 0.4
+  audioSource: {fileID: -1375717212722036072}
   shootSound: {fileID: 8300000, guid: a9fb2bd05d11d7d43b2145f5802f76b0, type: 3}
   photonView: {fileID: 4131078775423060016}
 --- !u!114 &4131078775423060016
@@ -258,7 +259,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 2
   OwnershipTransfer: 2
   observableSearch: 2
   ObservedComponents:
@@ -281,7 +282,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.28
   Loop: 0
   Mute: 0
   Spatialize: 0
