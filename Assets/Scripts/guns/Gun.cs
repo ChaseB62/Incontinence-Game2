@@ -68,5 +68,11 @@ public class Gun : MonoBehaviour
         collider.enabled = toggleBool;
     }
 
+    [PunRPC]
+    public void ClearParent(){
+        Debug.Log("Cleared Parent");
+        transform.parent = null;
+    }
+
 
 }

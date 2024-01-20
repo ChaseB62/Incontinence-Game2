@@ -125,10 +125,7 @@ public class GunController : MonoBehaviour
 
             gun = currentGun.GetComponent<Gun>();
             
-            if(multiplayerSetup.IsTheGuy){
-                
-                gun.enabled = false;
-            }
+            gun.enabled = false;
 
             // Re-enable the original Rigidbody2D component if it exists
             if (originalRigidbody != null)
@@ -143,6 +140,8 @@ public class GunController : MonoBehaviour
                 Collider2D tempCollider = originalGunOnGround.GetComponent<Collider2D>();
 
                 photonView.RPC("ToggleRigidbodyAndCollider", RpcTarget.AllBuffered, true);
+
+                photonView.RPC("ClearParent", RpcTarget.AllBuffered);
 
                 originalGunOnGround.transform.parent = null;
 
@@ -174,6 +173,11 @@ public class GunController : MonoBehaviour
     public void ToggleRigidbodyAndCollider(bool toggleBool){
         Debug.Log("toggling");
         gun.Toggle(toggleBool);
+    }
+
+    [PunRPC]
+    public void ClearParent(){
+        gun.ClearParent();
     }
 }
 //homer
