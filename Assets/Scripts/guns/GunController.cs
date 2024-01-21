@@ -12,7 +12,7 @@ public class GunController : MonoBehaviour
     public float pickupRadius = 2f;
 
     public float chuckSpeed = 10f;
-    public bool isHoldingGun = false;
+    private bool isHoldingGun = false;
     private string lastPickedGunType = ""; // Store the type of the last picked up gun
 
     private bool isLocalPlayer;
@@ -21,157 +21,170 @@ public class GunController : MonoBehaviour
 
     public PhotonView photonView;
 
-    public void Start(){
-        if(multiplayerSetup.IsTheGuy){
+    public void Start()
+    {
+        if (multiplayerSetup.IsTheGuy)
+        {
             isLocalPlayer = true;
-            Debug.Log("you ARE HIM");
-        } else {
-            Debug.Log("end your existence");
+            Debug.Log("You are the guy");
+        }
+        else
+        {
+            Debug.Log("End your existence");
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && isLocalPlayer)
         {
             photonView = PhotonView.Get(this);
 
             if (!isHoldingGun)
             {
-                //photonView.RPC("PickUpGun", RpcTarget.AllBuffered);
-                PickUpGun();
+                photonView.RPC("PickUpGun", RpcTarget.AllBuffered);
                 Debug.Log("Picking UP");
             }
             else
             {
                 photonView.RPC("DropGun", RpcTarget.AllBuffered);
-                Debug.Log("THroweing in back");
+                Debug.Log("Throwing in back");
             }
+        }
+
+        if(isHoldingGun){
+            photonView.RPC("SyncPosition", RpcTarget.All);
         }
     }
 
+    [PunRPC]
     void PickUpGun()
+    {
+        if (isHoldingGun)
         {
-            if (isHoldingGun)
-            {
-                Debug.Log("Cannot pick up another gun while already holding one.");
-                return;
-            }
-
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(playerHand.position, pickupRadius, gunLayer);
-
-            foreach (Collider2D collider in colliders)
-            {
-                //aiden wrote the majority of this but since hes stupid and dumb he had to make a new tag for each individual gun so i got rid of that and shunned him.
-                //and then i proceded to fuck the game
-                //My Life IS OVER!
-                //nvm
-                if (collider.CompareTag("Grab"))
-                {
-                    
-                    Debug.Log("Picking up " + collider.name);
-
-                    originalGunOnGround = collider.gameObject;
-                    
-
-                    if(multiplayerSetup.IsTheGuy){
-                        gun = originalGunOnGround.GetComponent<Gun>();
-                        Debug.Log("is player");
-                        currentGun = originalGunOnGround;
-                        gun.enabled = true;
-                    } else {
-                        Debug.Log("is NOT player");
-                    }
-                    originalGunOnGround.transform.parent = playerHand;
-                    originalGunOnGround.transform.localPosition = Vector3.zero;
-                    originalGunOnGround.transform.localEulerAngles = new Vector3(0,0,0);
-                    originalGunOnGround.transform.localScale = new Vector3(1f, 1f, 1f);
-
-                    // Store the original Rigidbody2D component
-                    originalRigidbody = collider.GetComponent<Rigidbody2D>();
-
-                    Collider2D collider2 = originalGunOnGround.GetComponent<Collider2D>();
-
-                    
-                    photonView.RPC("ToggleRigidbodyAndCollider", RpcTarget.AllBuffered, false);
-
-                    // Update the originalGunOnGround reference and lastPickedGunType
-                    originalGunOnGround = currentGun;
-                    lastPickedGunType = collider.tag;
-
-                    isHoldingGun = true;
-                    break;
-                }
-            }
+            Debug.Log("Cannot pick up another gun while already holding one.");
+            return;
         }
 
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(playerHand.position, pickupRadius, gunLayer);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("Grab"))
+            {
+                Debug.Log("Picking up " + collider.name);
+
+                originalGunOnGround = collider.gameObject;
+                gun = originalGunOnGround.GetComponent<Gun>();
+
+                if (isLocalPlayer)
+                {
+                    Debug.Log("Is local player");
+                    gun.enabled = true;
+                }
+                else
+                {
+                    Debug.Log("Is not local player");
+                }
+
+                originalGunOnGround.transform.parent = playerHand;
+                originalGunOnGround.transform.localPosition = Vector3.zero;
+                originalGunOnGround.transform.localEulerAngles = Vector3.zero;
+                originalGunOnGround.transform.localScale = Vector3.one;
+
+                originalRigidbody = collider.GetComponent<Rigidbody2D>();
+                photonView.RPC("ToggleRigidbodyAndCollider", RpcTarget.AllBuffered, false);
+                photonView.RPC("AddParent", RpcTarget.AllBuffered);
+
+                isHoldingGun = true;
+                break;
+            }
+        }
+    }
 
     [PunRPC]
     void DropGun()
     {
         if (originalGunOnGround != null)
         {
-            
             Debug.Log("Dropping " + originalGunOnGround.name);
 
             originalGunOnGround.transform.parent = null;
-            originalGunOnGround.transform.localScale = new Vector3(1f, 1f, 1f);
+            originalGunOnGround.transform.localScale = Vector3.one;
 
             gun = originalGunOnGround.GetComponent<Gun>();
-            
             gun.enabled = false;
 
-            // Re-enable the original Rigidbody2D component if it exists
             if (originalRigidbody != null)
             {
                 originalRigidbody.simulated = true;
             }
 
-            // Check if the instantiated gun has a Rigidbody2D and re-enable it
             Rigidbody2D gunRigidbody = originalGunOnGround.GetComponent<Rigidbody2D>();
             if (gunRigidbody != null)
             {
-                Collider2D tempCollider = originalGunOnGround.GetComponent<Collider2D>();
-
                 photonView.RPC("ToggleRigidbodyAndCollider", RpcTarget.AllBuffered, true);
-
                 photonView.RPC("ClearParent", RpcTarget.AllBuffered);
 
-                originalGunOnGround.transform.parent = null;
-
-                gunRigidbody.AddForce(playerHand.transform.forward * chuckSpeed);
+                gunRigidbody.AddForce(playerHand.transform.up * chuckSpeed);
 
                 Debug.Log("Toggle");
             }
 
-            
-            
-
-            
-
-            // Destroy the current gun if it's different from the original gun on the ground
-            if (currentGun != originalGunOnGround)
-            {
-                Destroy(currentGun);
-            }
-
-            currentGun = null;
-
             isHoldingGun = false;
-        } else {
-            Debug.Log("FUCKING KILL yourself");
+        }
+        else
+        {
+            Debug.Log("Original gun on ground is null. Cannot drop.");
         }
     }
 
     [PunRPC]
-    public void ToggleRigidbodyAndCollider(bool toggleBool){
-        Debug.Log("toggling");
+    public void ToggleRigidbodyAndCollider(bool toggleBool)
+    {
+        Debug.Log("Toggling");
         gun.Toggle(toggleBool);
     }
 
     [PunRPC]
-    public void ClearParent(){
-        gun.ClearParent();
+    public void ClearParent()
+    {
+        if (gun != null)
+        {
+            gun.ClearParent();
+            Debug.Log("Clearing Parent...");
+        }
+        else
+        {
+            Debug.LogError("Gun component is null. Cannot clear parent.");
+        }
+    }
+
+
+    [PunRPC]
+    public void AddParent()
+    {
+        if (originalGunOnGround != null)
+        {
+            originalGunOnGround.transform.parent = playerHand;
+
+            if (originalGunOnGround.transform.parent == playerHand)
+            {
+                Debug.Log("Parent added");
+            }
+            else
+            {
+                Debug.LogError("Parent failed to add :(");
+            }
+        }
+        else
+        {
+            Debug.LogError("Original gun on ground is null. Cannot add parent.");
+        }
+    }
+
+    [PunRPC]
+    public void SyncPosition(){
+        gun.GoToZero();
     }
 }
-//homer
