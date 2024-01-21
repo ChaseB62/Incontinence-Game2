@@ -5032,9 +5032,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 50
-      minScalar: 45
+      minScalar: 50
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5894,7 +5894,7 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
