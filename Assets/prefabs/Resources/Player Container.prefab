@@ -527,6 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 133958552250514917}
   gunController: {fileID: 8439192084113698727}
+  playerHealthScript: {fileID: 133958552250514913}
   lookAtMouse: {fileID: 133958550954577025}
   camera: {fileID: 133958550763588584}
   nickname: 
@@ -1141,7 +1142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133958552250514911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c52272e71f956c345af114e0d30a5eba, type: 3}
   m_Name: 
