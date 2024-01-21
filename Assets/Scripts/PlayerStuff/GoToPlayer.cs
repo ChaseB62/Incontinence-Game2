@@ -9,7 +9,7 @@ public class GoToPlayer : MonoBehaviour
     public Transform player;
 
     public float lerpSpeed = 5f;
-    public float Zoom = 10f;
+    public float Zoom = 1f;
 
     public float maxFOV = 120f;
     public float minFOV = 85f;
@@ -18,7 +18,7 @@ public class GoToPlayer : MonoBehaviour
 
     void Update()
     {
-        Vector3 playerLerp = new Vector3(player.transform.position.x, player.transform.position.y, (Zoom * -1)); 
+        Vector3 playerLerp = new Vector3(player.transform.position.x, player.transform.position.y, -10f); 
         transform.position = Vector3.Lerp(transform.position, playerLerp, Time.deltaTime * lerpSpeed);
 
         float initialFOV = minFOV;

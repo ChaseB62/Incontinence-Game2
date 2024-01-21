@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 133958552250514910}
   lerpSpeed: 5
-  Zoom: 10
+  Zoom: 1
   maxFOV: 120
   minFOV: 85
   playerCamera: {fileID: 133958550763588588}
@@ -422,7 +422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 133958550954577027}
   - component: {fileID: 133958550954577025}
-  - component: {fileID: 8393920321178131796}
+  - component: {fileID: 1248679977449992936}
   m_Layer: 3
   m_Name: GunHolder
   m_TagString: Untagged
@@ -459,7 +459,7 @@ MonoBehaviour:
   minRotation: 90
   maxRotation: -90
   playerCam: {fileID: 133958550763588588}
---- !u!114 &8393920321178131796
+--- !u!114 &1248679977449992936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -468,30 +468,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 133958550954577020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 4
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
-    ExtrapolateOption: 1
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 1
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 10
-  m_ScaleModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 2
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 15
+  m_SynchronizePosition: 0
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 1
+  m_UseLocal: 0
 --- !u!1 &133958551116701605
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +489,7 @@ GameObject:
   - component: {fileID: 8439192084113698727}
   - component: {fileID: 6360103120590986779}
   - component: {fileID: 2414250506023001112}
+  - component: {fileID: 6425407327900648103}
   m_Layer: 3
   m_Name: Player Container
   m_TagString: Untagged
@@ -569,10 +553,11 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 2
   OwnershipTransfer: 0
-  observableSearch: 1
+  observableSearch: 2
   ObservedComponents:
+  - {fileID: 6425407327900648103}
   - {fileID: 133958552250514915}
-  - {fileID: 0}
+  - {fileID: 1248679977449992936}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -625,6 +610,22 @@ MonoBehaviour:
   healthScript: {fileID: 133958552250514913}
   multiplayerSetup: {fileID: 133958551116701604}
   photonView: {fileID: 1375388369227838064}
+--- !u!114 &6425407327900648103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133958551116701605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &133958551468525888
 GameObject:
   m_ObjectHideFlags: 0

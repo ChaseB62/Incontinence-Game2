@@ -22,8 +22,16 @@ public class playerHealth : MonoBehaviour
     public float deathFlingForce = 1000f;
     public float deathRotateForce = 100f;
 
+    private float maxFOV;
+    private float minFOV;
+
     public particleHandler particleHandler;
     public GoToPlayer goToPlayer;
+
+    private void Start() {
+        maxFOV = goToPlayer.maxFOV;
+        minFOV = goToPlayer.minFOV;
+    }
     
 
     public void Update()
@@ -46,7 +54,8 @@ public class playerHealth : MonoBehaviour
         rb.freezeRotation = false;
         if(isDead == false)
         {
-            goToPlayer.Zoom = 7.5f;
+            goToPlayer.minFOV = 40;
+            goToPlayer.maxFOV = 85;
             goToPlayer.lerpSpeed = 10f;
             rb.AddForce(Random.insideUnitCircle * Random.Range(deathFlingForce, deathFlingForce + (deathFlingForce / 4)), ForceMode2D.Impulse);
             rb.AddTorque(Random.Range((deathRotateForce * -1), deathRotateForce), ForceMode2D.Impulse);
@@ -58,7 +67,8 @@ public class playerHealth : MonoBehaviour
     public void Revive(){
         playerMovement.enabled = true;
         isDead = false;
-        goToPlayer.Zoom = 10f;
+        goToPlayer.minFOV = minFOV;
+        goToPlayer.maxFOV = maxFOV;
         goToPlayer.lerpSpeed = 10f;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.freezeRotation = true;

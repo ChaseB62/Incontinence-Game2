@@ -1210,7 +1210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapPrefabs:
-  - {fileID: 5504886389239408433, guid: 818b890382d52ef49833599ee0c64aab, type: 3}
   - {fileID: 8818397990916269206, guid: 589698a359b72b2409b8cd642da5cd2a, type: 3}
   - {fileID: 7390286597438425602, guid: 85a0aecfbd8a8f0429d1cd8cfdcd3ac4, type: 3}
   - {fileID: 6153568071160394154, guid: 48d7c7f9029b1ff4f88e437abe7ca668, type: 3}
