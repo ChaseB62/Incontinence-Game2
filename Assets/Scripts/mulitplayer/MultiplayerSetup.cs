@@ -8,6 +8,7 @@ public class MultiplayerSetup : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public GunController gunController;
+    public playerHealth playerHealthScript;
     public LookAtMouse lookAtMouse;
     public GameObject camera;
 
@@ -27,6 +28,7 @@ public class MultiplayerSetup : MonoBehaviour
         PhotonNetwork.AutomaticallySyncScene = true;
         IsTheGuy = true;
         playerMovement.enabled = true;
+        playerHealthScript.enabled = true;
         gunController.enabled = true;
         lookAtMouse.enabled = true;
         camera.SetActive(true);

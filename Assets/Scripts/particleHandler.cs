@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class particleHandler : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class particleHandler : MonoBehaviour
     }
 
     public void Die(){
-        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+        GameObject bloodEffect = PhotonNetwork.Instantiate(deathParticle.name, player.transform.position, player.transform.rotation);
+        bloodEffect.SetActive(true);
     }
 }
