@@ -23,12 +23,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2703976064799996576}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.782, y: 0.231, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.835, y: 0.325, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4077526678756720629}
-  m_RootOrder: 1
+  m_Father: {fileID: 4661879972286063249}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3039876938170644796
 GameObject:
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: -5719535518778022328}
   - component: {fileID: 3075991919681307039}
   m_Layer: 6
-  m_Name: Minecraft bow
+  m_Name: Glock W Switch
   m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,8 +65,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3151033578380478697}
-  - {fileID: 6225925808315640943}
+  - {fileID: 4661879972286063249}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83,7 +82,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.15, y: 0.22}
+  m_Offset: {x: 0.14, y: 0.13}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -95,17 +94,25 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.30023107, y: 0.5207025}
-      - {x: -0.028060555, y: 0.7564565}
-      - {x: -0.12691894, y: 0.71857345}
-      - {x: -0.1645127, y: 0.40638426}
-      - {x: -0.13351622, y: -0.018215895}
-      - {x: -0.13367069, y: -0.40422863}
-      - {x: -0.14536215, y: -0.6036471}
-      - {x: -0.11687639, y: -1.046506}
-      - {x: 0.27647057, y: -0.7951131}
-      - {x: 0.401112, y: -0.4444348}
-      - {x: 0.4529749, y: -0.25057214}
+    - - {x: 0.29356706, y: 0.13931563}
+      - {x: 0.12091147, y: 0.14387172}
+      - {x: -0.29242328, y: 0.17197368}
+      - {x: -0.34894198, y: 0.13758299}
+      - {x: -0.41182312, y: 0.04350078}
+      - {x: -0.3860963, y: -0.03912027}
+      - {x: -0.3106169, y: -0.048706867}
+      - {x: -0.27949387, y: -0.18462443}
+      - {x: -0.4597943, y: -0.5931885}
+      - {x: -0.3644177, y: -0.709585}
+      - {x: -0.108315475, y: -0.6846604}
+      - {x: -0.009229211, y: -0.33089954}
+      - {x: 0.040692925, y: -0.24728657}
+      - {x: 0.21054716, y: -0.2839889}
+      - {x: 0.37621015, y: -0.2562654}
+      - {x: 0.37339854, y: -0.08592134}
+      - {x: 0.7977828, y: -0.054979324}
+      - {x: 0.817029, y: 0.13161898}
+      - {x: 0.7541162, y: 0.17441678}
 --- !u!50 &8414581333357514922
 Rigidbody2D:
   serializedVersion: 4
@@ -140,11 +147,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootKey: 323
-  bulletObject: {fileID: 5834960985422244494, guid: d874007a8fb1b794ba66c46acad204b5, type: 3}
+  bulletObject: {fileID: 5834960985422244494, guid: efe63245b4e68334382f2063c5c52c2d, type: 3}
   bulletSpawn: {fileID: 6225925808315640943}
-  shootCooldown: 0.5
+  shootCooldown: 0.045
   audioSource: {fileID: 1736415101921323791}
-  shootSound: {fileID: 8300000, guid: 853e30fcd9ebc8b4e8ff3a0dd366b23a, type: 3}
+  shootSound: {fileID: 8300000, guid: 5706e76a6210c7448b616af24243655a, type: 3}
   photonView: {fileID: 4131078775423060016}
 --- !u!114 &4131078775423060016
 MonoBehaviour:
@@ -327,7 +334,7 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
---- !u!1 &4768288685127021391
+--- !u!1 &9204793871175667034
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -335,36 +342,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3151033578380478697}
-  - component: {fileID: 1933325107308416047}
+  - component: {fileID: 4661879972286063249}
+  - component: {fileID: 417076185851574762}
   m_Layer: 0
-  m_Name: Bow
+  m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3151033578380478697
+--- !u!4 &4661879972286063249
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4768288685127021391}
+  m_GameObject: {fileID: 9204793871175667034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.189, y: 0.07, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children: []
+  m_LocalPosition: {x: 0.334, y: -0.104, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6225925808315640943}
   m_Father: {fileID: 4077526678756720629}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1933325107308416047
+--- !u!212 &417076185851574762
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4768288685127021391}
+  m_GameObject: {fileID: 9204793871175667034}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -398,12 +406,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f8d6fb85631b2074b80fd0e2e68b7204, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 560d9ad72af2d994b97989b51ab76ee7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
