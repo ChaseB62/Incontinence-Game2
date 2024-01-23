@@ -31,7 +31,7 @@ public class MovingObjects : MonoBehaviour
         }
 
         // Move the object in one direction and reverse upon collision with "MovingBlock"
-        if (shouldMove)
+        if (shouldMove && rb != null)
         {
             if (moveRight)
             {
