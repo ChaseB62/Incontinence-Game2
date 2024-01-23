@@ -47,6 +47,7 @@ MonoBehaviour:
   photonView: {fileID: 1516105150296834328}
   objectsToSpawn:
   - {fileID: 1739301715480225847, guid: c48724e9a462e144aa39d301cad7dd10, type: 3}
+  - {fileID: 3039876938170644796, guid: e8e2de235b2bb2e4199aa27b6126b48a, type: 3}
   - {fileID: 3039876938170644796, guid: 7fe716bc8c053014f95a9f5888ae0e69, type: 3}
   - {fileID: 3039876938170644796, guid: 5a036debb32f49b4d9a8195da4fde703, type: 3}
   - {fileID: 3039876938170644796, guid: 8f206b5a3f674d442ba3905ff1c4111d, type: 3}
