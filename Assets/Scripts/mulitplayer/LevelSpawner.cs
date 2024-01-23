@@ -67,7 +67,7 @@ public class LevelSpawner : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the interacting object has the tag "Player"
-        if (other.CompareTag("canEffect"))
+        if (other.CompareTag("canEffect") && PhotonNetwork.IsMasterClient)
         {
             Debug.Log("Touched");
             music.SetActive(true);
@@ -79,6 +79,10 @@ public class LevelSpawner : MonoBehaviour
     IEnumerator Timer(){
         yield return new WaitForSeconds(timeToNextMap);
         
-        photonView.RPC("NextMap", RpcTarget.AllBuffered);
+        if(PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("NextMap", RpcTarget.AllBuffered);
+        }
+        
     }
 }
