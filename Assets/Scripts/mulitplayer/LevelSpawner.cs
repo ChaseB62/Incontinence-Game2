@@ -31,6 +31,7 @@ public class LevelSpawner : MonoBehaviour
         if (currentMap != null)
         {
             Destroy(currentMap);
+            PhotonNetwork.RemoveBufferedRPCs();
         }
 
         if(lobby != null){
