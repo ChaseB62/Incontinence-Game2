@@ -1210,15 +1210,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapPrefabs:
-  - {fileID: 8818397990916269206, guid: a7a0e9479c8f9a046b4c29527198984e, type: 3}
   - {fileID: 8818397990916269206, guid: 589698a359b72b2409b8cd642da5cd2a, type: 3}
   - {fileID: 7390286597438425602, guid: 85a0aecfbd8a8f0429d1cd8cfdcd3ac4, type: 3}
   - {fileID: 6153568071160394154, guid: 48d7c7f9029b1ff4f88e437abe7ca668, type: 3}
   - {fileID: 5504886389239408433, guid: 818b890382d52ef49833599ee0c64aab, type: 3}
   - {fileID: 5986568263783830681, guid: 57cae1fb2402f444aba76dd0ab507756, type: 3}
   - {fileID: 8309015318963383308, guid: 3574bd1a759603f43a58bd9da8fd8fbf, type: 3}
+  - {fileID: 8818397990916269206, guid: 076243ffa2e34484294d00989ad5f6de, type: 3}
+  - {fileID: 8818397990916269206, guid: a7a0e9479c8f9a046b4c29527198984e, type: 3}
+  - {fileID: 8818397990916269206, guid: 93fe4b8fc341147419e4c775c889bed0, type: 3}
   lobby: {fileID: 402280785}
-  timeToNextMap: 150
+  timeToNextMap: 15
   music: {fileID: 419101694}
   gunLayer:
     serializedVersion: 2
