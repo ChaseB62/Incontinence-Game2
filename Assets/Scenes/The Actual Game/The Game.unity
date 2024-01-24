@@ -1220,7 +1220,7 @@ MonoBehaviour:
   - {fileID: 8818397990916269206, guid: a7a0e9479c8f9a046b4c29527198984e, type: 3}
   - {fileID: 8818397990916269206, guid: 93fe4b8fc341147419e4c775c889bed0, type: 3}
   lobby: {fileID: 402280785}
-  timeToNextMap: 15
+  timeToNextMap: 150
   music: {fileID: 419101694}
   gunLayer:
     serializedVersion: 2
