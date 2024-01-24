@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerReviver : MonoBehaviour
 {
@@ -12,11 +13,17 @@ public class PlayerReviver : MonoBehaviour
 
     private Vector3 teleportPosition = new Vector3(0, 0, 0);
 
+    public MultiplayerSetup multiplayerSetup;
+
     private bool AlreadyDied = false;
     void Update()
     {
-        if(healthScript.isDead && !AlreadyDied){
+        if(healthScript.isDead && !AlreadyDied && multiplayerSetup.IsTheGuy){
             StartCoroutine(Revive());
+        }
+
+        if(healthScript.isDead == false){
+            AlreadyDied = false;
         }
     }
 
@@ -31,6 +38,5 @@ public class PlayerReviver : MonoBehaviour
         healthVariable.startHealth = 100f;
 
         Debug.Log("Revived.");
-        AlreadyDied = false;
     }
 }

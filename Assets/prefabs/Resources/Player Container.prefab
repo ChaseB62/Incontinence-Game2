@@ -1325,6 +1325,7 @@ MonoBehaviour:
   healthScript: {fileID: 133958552250514913}
   healthVariable: {fileID: 3327940144204313930}
   secondsUntilRevive: 5
+  multiplayerSetup: {fileID: 133958551116701604}
 --- !u!1 &133958552426682065
 GameObject:
   m_ObjectHideFlags: 0
