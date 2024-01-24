@@ -132,6 +132,9 @@ public class GunController : MonoBehaviour
             }
 
             isHoldingGun = false;
+
+            gun = null;
+            originalRigidbody = null;
         }
         else
         {

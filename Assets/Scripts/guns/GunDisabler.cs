@@ -9,10 +9,15 @@ public class GunDisabler : MonoBehaviour
 
     public MultiplayerSetup multiplayerSetup;
 
+    private bool alreadyDropped = false;
+
     public PhotonView photonView;
     private void Update() {
-        if(healthScript.isDead){
+        if(healthScript.isDead && !alreadyDropped){
             photonView.RPC("DropGun", RpcTarget.AllBuffered);
+            alreadyDropped = true;
+        } else {
+            alreadyDropped = false;
         }
     }
 }
