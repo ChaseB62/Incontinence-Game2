@@ -38,5 +38,7 @@ public class LookAtMouse : MonoBehaviour
             transform.localScale = flippedScale;
             Debug.Log("flipped");
         }
+
+        transform.localPosition = new Vector3(0,0,0);
     }
 }
